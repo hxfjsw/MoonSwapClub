@@ -243,9 +243,9 @@ export default function WalletModal({
                 id={`connect-${key}`}
                 key={key}
                 color={'#E8831D'}
-                header={'Install Okx Wallet'}
+                header={'Install Metamask'}
                 subheader={null}
-                link={'https://web3.okx.com/zh-hans'}
+                link={'https://metamask.io/'}
                 icon={MetamaskIcon}
               />
             )
