@@ -49,13 +49,13 @@ export const CUSTOM_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: To
 // used for display in the default list when adding liquidity
 export const SUGGESTED_BASES: ChainTokenList = {
   ...WETH_ONLY,
-  [ChainId.XLayer]: [...WETH_ONLY[ChainId.XLayer], DAI, USDC, USDT]
+  [ChainId.XLayer]: [...WETH_ONLY[ChainId.XLayer], USDT]
 }
 
 // used to construct the list of all pairs we consider by default in the frontend
 export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
   ...WETH_ONLY,
-  [ChainId.XLayer]: [...WETH_ONLY[ChainId.XLayer], DAI, USDC, USDT]
+  [ChainId.XLayer]: [...WETH_ONLY[ChainId.XLayer], USDT]
 }
 
 export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } = {
@@ -63,6 +63,8 @@ export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } 
     [WETH[ChainId.XLayer], new Token(ChainId.XLayer, '0xcA845756FDb250c876b2B4C41197B77F5Dc00969', 18, 'MTK', 'MTK')]
   ]
 }
+
+console.log("PINNED_PAIRS",PINNED_PAIRS)
 
 export interface WalletInfo {
   connector?: AbstractConnector

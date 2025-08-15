@@ -855,7 +855,8 @@ var Pair = /*#__PURE__*/function () {
 
     var tokens = tokenA.sortsBefore(tokenB) ? [tokenA, tokenB] : [tokenB, tokenA]; // does safety checks
 
-    console.log("getAddress", tokenA.address);
+    console.log("FACTORY_ADDRESS", FACTORY_ADDRESS);
+    console.log("INIT_CODE_HASH", INIT_CODE_HASH); // console.log("FACTORY_ADDRESS",FACTORY_ADDRESS)
 
     if (((_PAIR_ADDRESS_CACHE = PAIR_ADDRESS_CACHE) === null || _PAIR_ADDRESS_CACHE === void 0 ? void 0 : (_PAIR_ADDRESS_CACHE$t = _PAIR_ADDRESS_CACHE[tokens[0].address]) === null || _PAIR_ADDRESS_CACHE$t === void 0 ? void 0 : _PAIR_ADDRESS_CACHE$t[tokens[1].address]) === undefined) {
       var _PAIR_ADDRESS_CACHE2, _extends2, _extends3;
