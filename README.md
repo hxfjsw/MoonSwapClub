@@ -39,4 +39,13 @@ yarn run hardhat MultiCall:deploy --gas-price 2 --wait-num 5 --network xlayer
 
 
 npx hardhat flatten contracts/uniswap-v2-periphery/test/WETH9.sol > flat/WETH9.sol
+npx hardhat flatten contracts/uniswap-v2-periphery/UniswapV2Router02.sol > flat/UniswapV2Router02.sol
+npx hardhat flatten contracts/uniswap-v2-core/UniswapV2Factory.sol > flat/UniswapV2Factory.sol
+npx hardhat flatten contracts/uniswap-v2-core/UniswapV2Pair.sol > flat/UniswapV2Pair.sol
+
+
+yarn run hardhat UniswapV2:deploy --gas-price 2 --wait-num 5 --network hardhat
+
+
 ```
+

@@ -123,7 +123,7 @@ var _SOLIDITY_TYPE_MAXIMA;
   Rounding[Rounding["ROUND_UP"] = 2] = "ROUND_UP";
 })(exports.Rounding || (exports.Rounding = {}));
 
-var FACTORY_ADDRESS = DeploymentInfo[exports.ChainId.RINKEBY].factory.proxyAddress;
+var FACTORY_ADDRESS = DeploymentInfo[exports.ChainId.XLayer].factory.proxyAddress;
 var INIT_CODE_HASH = '0x2bbf561059bfad76dd3e7f5e7e45d68e76db16d20d00dc76889202628a6417d9';
 var MINIMUM_LIQUIDITY = /*#__PURE__*/JSBI.BigInt(1000); // exports for internal consumption
 
@@ -854,6 +854,8 @@ var Pair = /*#__PURE__*/function () {
     var _PAIR_ADDRESS_CACHE, _PAIR_ADDRESS_CACHE$t;
 
     var tokens = tokenA.sortsBefore(tokenB) ? [tokenA, tokenB] : [tokenB, tokenA]; // does safety checks
+
+    console.log("getAddress", tokenA.address);
 
     if (((_PAIR_ADDRESS_CACHE = PAIR_ADDRESS_CACHE) === null || _PAIR_ADDRESS_CACHE === void 0 ? void 0 : (_PAIR_ADDRESS_CACHE$t = _PAIR_ADDRESS_CACHE[tokens[0].address]) === null || _PAIR_ADDRESS_CACHE$t === void 0 ? void 0 : _PAIR_ADDRESS_CACHE$t[tokens[1].address]) === undefined) {
       var _PAIR_ADDRESS_CACHE2, _extends2, _extends3;

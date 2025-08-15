@@ -1,7 +1,7 @@
 import useENS from '../../hooks/useENS'
 import { Version } from '../../hooks/useToggledVersion'
 import { parseUnits } from '@ethersproject/units'
-import { Currency, CurrencyAmount, ETHER, JSBI, Token, TokenAmount, Trade } from '@im33357/uniswap-v2-sdk'
+import { ChainId, Currency, CurrencyAmount, ETHER, JSBI, Token, TokenAmount, Trade } from '@im33357/uniswap-v2-sdk'
 import { ParsedQs } from 'qs'
 import { useCallback, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -90,9 +90,9 @@ export function tryParseAmount(value?: string, currency?: Currency): CurrencyAmo
 }
 
 const BAD_RECIPIENT_ADDRESSES: string[] = [
-  DeploymentInfo[4].factory.proxyAddress, // v2 factory
+  DeploymentInfo[ChainId.XLayer].factory.proxyAddress, // v2 factory
   '0xf164fC0Ec4E93095b804a4795bBe1e041497b92a', // v2 router 01
-  DeploymentInfo[4].router.proxyAddress // v2 router 02
+  DeploymentInfo[ChainId.XLayer].router.proxyAddress // v2 router 02
 ]
 
 /**
