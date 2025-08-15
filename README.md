@@ -18,3 +18,16 @@ yarn build
 
 ## 遇到lint报错执行以下命令可以自动修复
 npx prettier --write "src/**/*.{ts,tsx}"
+
+
+
+## 合约编译
+```shell
+cd hardhat
+npx hardhat compile
+```
+
+## 发布合约
+
+```shell
+npx hardhat --network juchain run scripts/deploy_0_wth9.js

@@ -6,7 +6,7 @@
   "private": true,
   "devDependencies": {
     "@ethersproject/experimental": "^5.0.1",
-    "@im33357/uniswap-v2-sdk": "3.0.7",
+    "@im33357/uniswap-v2-sdk": "file:../contract/sdk",
     "@popperjs/core": "^2.4.4",
     "@reach/dialog": "^0.10.3",
     "@reach/portal": "^0.10.3",

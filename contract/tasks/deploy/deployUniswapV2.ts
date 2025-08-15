@@ -35,6 +35,8 @@ task(taskName, `Deploy ${taskSymbol}`)
         const operator = (await hre.ethers.getSigners())[0];
         const chainId = Number(await hre.getChainId());
 
+        log.info(`operator ${operator.address}`);
+
         log.info(`deploy ${wethContract}`);
         const Weth = await hre.ethers.getContractFactory(wethContract);
         const deployWethResult = await ethersExecutionManager.transaction(

@@ -12,8 +12,9 @@ import dotenv from 'dotenv';
 import './tasks';
 
 dotenv.config();
-const privateKey = process.env.PRIVATE_KEY;
-const gasPrice = process.env.GAS_PRICE || 1;
+const privateKey = process.env.MOON_SWAP_PRIVATE_KEY;
+console.log("privateKey",privateKey)
+const gasPrice = process.env.GAS_PRICE || 2
 const mnemonic = 'test test test test test test test test test test test junk';
 let accounts;
 if (privateKey) {
