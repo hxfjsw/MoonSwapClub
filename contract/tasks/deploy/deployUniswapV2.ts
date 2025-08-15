@@ -16,6 +16,7 @@ const routerContract = 'UniswapV2Router02';
 const factoryContract = 'UniswapV2Factory';
 const taskSymbol = 'UniswapV2'
 const taskName = `${taskSymbol}:deploy`;
+// console.log("taskName",taskName)
 
 task(taskName, `Deploy ${taskSymbol}`)
     .addOptionalParam('waitNum', 'The waitNum to transaction')

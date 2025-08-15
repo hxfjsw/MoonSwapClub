@@ -9,11 +9,12 @@ import 'hardhat-gas-reporter';
 import 'solidity-coverage';
 import '@nomiclabs/hardhat-etherscan';
 import dotenv from 'dotenv';
+import '@okxweb3/hardhat-explorer-verify';  // Import the plugin
 import './tasks';
 
 dotenv.config();
 const privateKey = process.env.MOON_SWAP_PRIVATE_KEY;
-console.log("privateKey",privateKey)
+// console.log("privateKey", privateKey)
 const gasPrice = process.env.GAS_PRICE || 2
 const mnemonic = 'test test test test test test test test test test test junk';
 let accounts;
@@ -106,7 +107,7 @@ const config: HardhatUserConfig = {
                 .mul(10 ** 9)
                 .toNumber(),
         },
-        196: {
+        xlayer: {
             url: `https://xlayerrpc.okx.com`,
             accounts,
             timeout: 60000,
@@ -135,7 +136,7 @@ const config: HardhatUserConfig = {
         target: 'ethers-v5',
     },
     etherscan: {
-        apiKey: process.env.APIKEY,
+        apiKey: process.env.XLayerAPIKEY,
         customChains: [
             {
                 network: "X Layer Testnet",
@@ -155,5 +156,8 @@ const config: HardhatUserConfig = {
             }
         ]
     },
+    okxweb3explorer: {
+        apiKey: "",
+    }
 };
 export default config;

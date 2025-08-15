@@ -4,7 +4,7 @@ import { DeploymentInfo } from '@im33357/uniswap-v2-sdk'
 
 import { fortmatic, injected, portis, walletconnect, walletlink } from '../connectors'
 
-export const ROUTER_ADDRESS = DeploymentInfo[4].router.proxyAddress
+export const ROUTER_ADDRESS = DeploymentInfo[ChainId.XLayer].router.proxyAddress
 
 // a list of tokens by chain
 type ChainTokenList = {

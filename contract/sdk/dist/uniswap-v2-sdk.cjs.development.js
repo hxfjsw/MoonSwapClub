@@ -44,6 +44,32 @@ var deploymentData = {
 		fromBlock: 10108205
 	}
 },
+	"196": {
+	weth: {
+		proxyAddress: "0x661164ad622Cb439280a0F15C5a9936f2cA015da",
+		implAddress: "0x661164ad622Cb439280a0F15C5a9936f2cA015da",
+		version: "1.0.0",
+		contract: "WETH9",
+		operator: "0x689654553F70c434922d9d2B6180CeBb571c1127",
+		fromBlock: 30694869
+	},
+	factory: {
+		proxyAddress: "0x163F78829bD4DC67d8E4BDD5331C5f0F6196F2a6",
+		implAddress: "0x163F78829bD4DC67d8E4BDD5331C5f0F6196F2a6",
+		version: "1.0.0",
+		contract: "UniswapV2Factory",
+		operator: "0x689654553F70c434922d9d2B6180CeBb571c1127",
+		fromBlock: 30694916
+	},
+	router: {
+		proxyAddress: "0x9714BfFe87B2C24E2296d1F666B6331262065eE9",
+		implAddress: "0x9714BfFe87B2C24E2296d1F666B6331262065eE9",
+		version: "1.0.0",
+		contract: "UniswapV2Router02",
+		operator: "0x689654553F70c434922d9d2B6180CeBb571c1127",
+		fromBlock: 30694946
+	}
+},
 	"31337": {
 	weth: {
 		proxyAddress: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
@@ -497,7 +523,7 @@ function currencyEquals(currencyA, currencyB) {
     return currencyA === currencyB;
   }
 }
-var WETH = (_WETH = {}, _WETH[exports.ChainId.MAINNET] = /*#__PURE__*/new Token(exports.ChainId.MAINNET, '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2', 18, 'WETH', 'Wrapped Ether'), _WETH[exports.ChainId.ROPSTEN] = /*#__PURE__*/new Token(exports.ChainId.ROPSTEN, '0xc778417E063141139Fce010982780140Aa0cD5Ab', 18, 'WETH', 'Wrapped Ether'), _WETH[exports.ChainId.RINKEBY] = /*#__PURE__*/new Token(exports.ChainId.RINKEBY, DeploymentInfo[exports.ChainId.RINKEBY].weth.proxyAddress, 18, 'WETH', 'Wrapped Ether'), _WETH[exports.ChainId.GÖRLI] = /*#__PURE__*/new Token(exports.ChainId.GÖRLI, '0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6', 18, 'WETH', 'Wrapped Ether'), _WETH[exports.ChainId.KOVAN] = /*#__PURE__*/new Token(exports.ChainId.KOVAN, '0xd0A1E359811322d97991E03f863a0C30C2cF029C', 18, 'WETH', 'Wrapped Ether'), _WETH[exports.ChainId.XLayer] = /*#__PURE__*/new Token(exports.ChainId.XLayer, '0xd0A1E359811322d97991E03f863a0C30C2cF029C', 18, 'WETH', 'Wrapped Ether'), _WETH[exports.ChainId.XLayerTest] = /*#__PURE__*/new Token(exports.ChainId.XLayerTest, '0xd0A1E359811322d97991E03f863a0C30C2cF029C', 18, 'WETH', 'Wrapped Ether'), _WETH);
+var WETH = (_WETH = {}, _WETH[exports.ChainId.MAINNET] = /*#__PURE__*/new Token(exports.ChainId.MAINNET, '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2', 18, 'WETH', 'Wrapped Ether'), _WETH[exports.ChainId.ROPSTEN] = /*#__PURE__*/new Token(exports.ChainId.ROPSTEN, '0xc778417E063141139Fce010982780140Aa0cD5Ab', 18, 'WETH', 'Wrapped Ether'), _WETH[exports.ChainId.RINKEBY] = /*#__PURE__*/new Token(exports.ChainId.RINKEBY, DeploymentInfo[exports.ChainId.RINKEBY].weth.proxyAddress, 18, 'WETH', 'Wrapped Ether'), _WETH[exports.ChainId.GÖRLI] = /*#__PURE__*/new Token(exports.ChainId.GÖRLI, '0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6', 18, 'WETH', 'Wrapped Ether'), _WETH[exports.ChainId.KOVAN] = /*#__PURE__*/new Token(exports.ChainId.KOVAN, '0xd0A1E359811322d97991E03f863a0C30C2cF029C', 18, 'WETH', 'Wrapped Ether'), _WETH[exports.ChainId.XLayer] = /*#__PURE__*/new Token(exports.ChainId.XLayer, '0x661164ad622Cb439280a0F15C5a9936f2cA015da', 18, 'WETH', 'Wrapped Ether'), _WETH[exports.ChainId.XLayerTest] = /*#__PURE__*/new Token(exports.ChainId.XLayerTest, '0xd0A1E359811322d97991E03f863a0C30C2cF029C', 18, 'WETH', 'Wrapped Ether'), _WETH);
 
 var _toSignificantRoundin, _toFixedRounding;
 var Decimal = /*#__PURE__*/toFormat(_Decimal);
