@@ -1,7 +1,7 @@
 import '@nomiclabs/hardhat-ethers';
-import { task } from 'hardhat/config';
-import { HardhatRuntimeEnvironment } from 'hardhat/types';
-import { PayableOverrides } from 'ethers';
+import {task} from 'hardhat/config';
+import {HardhatRuntimeEnvironment} from 'hardhat/types';
+import {PayableOverrides} from 'ethers';
 import {
     EthersExecutionManager,
     getDeployment,
@@ -76,7 +76,7 @@ task(taskName, `Deploy ${taskSymbol}`)
         const Router = await hre.ethers.getContractFactory(routerContract);
         const deployRouterResult = await ethersExecutionManager.transaction(
             Router.deploy.bind(Router),
-            [factoryProxyAddress,wethProxyAddress],
+            [factoryProxyAddress, wethProxyAddress],
             ['contractAddress', 'blockNumber'],
             `deploy ${routerContract}`,
             txConfig
@@ -122,4 +122,35 @@ task(taskName, `Deploy ${taskSymbol}`)
 
         ethersExecutionManager.printGas();
         ethersExecutionManager.deleteLock();
+    });
+
+
+task("MultiCall:deploy", `Deploy MultiCall`)
+    .addOptionalParam('waitNum', 'The waitNum to transaction')
+    .addOptionalParam('gasPrice', 'The gasPrice to transaction')
+    .setAction(async (args, hre: HardhatRuntimeEnvironment) => {
+        const txConfig: PayableOverrides = {};
+        txConfig.gasPrice = args['gasPrice']
+            ? hre.ethers.utils.parseUnits(args['gasPrice'], 'gwei')
+            : undefined;
+        const waitNum = args['waitNum'] ? parseInt(args['waitNum']) : 1;
+        const ethersExecutionManager = new EthersExecutionManager(
+            `${LOCK_DIR}/${taskName}.lock`,
+            RETRY_NUMBER,
+            waitNum
+        );
+        await ethersExecutionManager.load();
+        const operator = (await hre.ethers.getSigners())[0];
+        const chainId = Number(await hre.getChainId());
+
+        log.info(`operator ${operator.address}`);
+
+        log.info(`deploy MultiCall}`);
+        const MultiCall = await hre.ethers.getContractFactory('Multicall');
+        const mgr = await MultiCall.deploy();
+        await mgr.deployed(); //等的确认发布
+
+        log.info(
+            `MultiCall deployed ${mgr.address}`
+        );
     });

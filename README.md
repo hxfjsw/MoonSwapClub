@@ -35,6 +35,7 @@ npx hardhat --network xlayer run MOON:deploy
 npx hardhat okverify --network xlayer 0x163F78829bD4DC67d8E4BDD5331C5f0F6196F2a6
 
 yarn run hardhat UniswapV2:deploy --gas-price 2 --wait-num 5 --network xlayer
+yarn run hardhat MultiCall:deploy --gas-price 2 --wait-num 5 --network xlayer
 
 
 npx hardhat flatten contracts/uniswap-v2-periphery/test/WETH9.sol > flat/WETH9.sol
