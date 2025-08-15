@@ -5,9 +5,9 @@ import { DEFAULT_LIST_OF_LISTS, DEFAULT_TOKEN_LIST_URL } from '../../constants/l
 import { updateVersion } from '../global/actions'
 import { acceptListUpdate, addList, fetchTokenList, removeList, selectList } from './actions'
 // import UNISWAP_DEFAULT_LIST from '@uniswap/default-token-list'
-import UNISWAP_DEFAULT_LIST from "../../token.json"
+import UNISWAP_DEFAULT_LIST from '../../token.json'
 
-console.log("UNISWAP_DEFAULT_LIST",UNISWAP_DEFAULT_LIST)
+console.log('UNISWAP_DEFAULT_LIST', UNISWAP_DEFAULT_LIST)
 export interface ListsState {
   readonly byUrl: {
     readonly [url: string]: {
