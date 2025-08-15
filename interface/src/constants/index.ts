@@ -4,7 +4,7 @@ import { DeploymentInfo } from '@im33357/uniswap-v2-sdk'
 
 import { fortmatic, injected, portis, walletconnect, walletlink } from '../connectors'
 
-console.log("DeploymentInfo" ,DeploymentInfo)
+console.log('DeploymentInfo', DeploymentInfo)
 export const ROUTER_ADDRESS = DeploymentInfo[ChainId.XLayer].router.proxyAddress
 
 // a list of tokens by chain
@@ -32,7 +32,7 @@ const WETH_ONLY: ChainTokenList = {
 // used to construct intermediary pairs for trading
 export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   ...WETH_ONLY,
-  [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, USDC, USDT, COMP, MKR],
+  // [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], DAI, USDC, USDT, COMP, MKR],
   [ChainId.XLayer]: [...WETH_ONLY[ChainId.XLayer], USDT]
 }
 
