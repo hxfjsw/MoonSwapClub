@@ -57,7 +57,7 @@ task(taskName, `Deploy ${taskSymbol}`)
         const wethProxyAddress = deployWethResult.contractAddress;
         const wethImplAddress = wethProxyAddress;
         const wethFromBlock = deployWethResult.blockNumber;
-        const wethVersion = '1.0.0';
+        const wethVersion = '1.0.1';
         log.info(
             `${wethContract} deployed proxy at ${wethProxyAddress},impl at ${wethImplAddress},version ${wethVersion},fromBlock ${wethFromBlock}`
         );
@@ -74,7 +74,7 @@ task(taskName, `Deploy ${taskSymbol}`)
         const factoryProxyAddress = deployFactoryResult.contractAddress;
         const factoryImplAddress = factoryProxyAddress;
         const factoryFromBlock = deployFactoryResult.blockNumber;
-        const factoryVersion = '1.0.0';
+        const factoryVersion = '1.0.1';
         log.info(
             `${factoryContract} deployed proxy at ${factoryProxyAddress},impl at ${factoryImplAddress},version ${factoryVersion},fromBlock ${factoryFromBlock}`
         );
@@ -91,7 +91,7 @@ task(taskName, `Deploy ${taskSymbol}`)
         const routerProxyAddress = deployRouterResult.contractAddress;
         const routerImplAddress = routerProxyAddress;
         const routerFromBlock = deployRouterResult.blockNumber;
-        const routerVersion = '1.0.0';
+        const routerVersion = '1.0.1';
         log.info(
             `${routerContract} deployed proxy at ${routerProxyAddress},impl at ${routerImplAddress},version ${routerVersion},fromBlock ${routerFromBlock}`
         );
