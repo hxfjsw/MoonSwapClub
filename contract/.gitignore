@@ -10,6 +10,5 @@ typechain/
 .openzeppelin/
 coverage/
 sdk/tsconfig.tsbuildinfo
-sdk/dist/
 logs/
 envs/
