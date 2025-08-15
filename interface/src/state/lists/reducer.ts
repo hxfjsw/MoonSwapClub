@@ -7,6 +7,7 @@ import { acceptListUpdate, addList, fetchTokenList, removeList, selectList } fro
 // import UNISWAP_DEFAULT_LIST from '@uniswap/default-token-list'
 import UNISWAP_DEFAULT_LIST from "../../token.json"
 
+console.log("UNISWAP_DEFAULT_LIST",UNISWAP_DEFAULT_LIST)
 export interface ListsState {
   readonly byUrl: {
     readonly [url: string]: {

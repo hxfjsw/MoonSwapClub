@@ -3,6 +3,7 @@ import { Tags, TokenInfo, TokenList } from '@uniswap/token-lists'
 import { useMemo } from 'react'
 import { useSelector } from 'react-redux'
 import { AppState } from '../index'
+import {DEFAULT_TOKEN_LIST_URL} from "../../constants/lists";
 
 type TagDetails = Tags[keyof Tags]
 
@@ -91,7 +92,7 @@ export function useTokenList(url: string | undefined): TokenAddressMap {
 }
 
 export function useSelectedListUrl(): string | undefined {
-  return useSelector<AppState, AppState['lists']['selectedListUrl']>(state => state.lists.selectedListUrl)
+  return DEFAULT_TOKEN_LIST_URL//useSelector<AppState, AppState['lists']['selectedListUrl']>(state => state.lists.selectedListUrl)
 }
 
 export function useSelectedTokenList(): TokenAddressMap {
