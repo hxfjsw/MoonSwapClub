@@ -5,19 +5,19 @@ import { Text } from 'rebass'
 
 import styled from 'styled-components'
 
-import Logo from '../../assets/svg/logo.svg'
-import LogoDark from '../../assets/svg/logo_white.svg'
-import Wordmark from '../../assets/svg/wordmark.svg'
-import WordmarkDark from '../../assets/svg/wordmark_white.svg'
+// import Logo from '../../assets/svg/logo.svg'
+import LogoDark from '../../assets/images/logo.png'
+// import Wordmark from '../../assets/svg/wordmark.svg'
+// import WordmarkDark from '../../assets/svg/wordmark_white.svg'
 import { useActiveWeb3React } from '../../hooks'
-import { useDarkModeManager } from '../../state/user/hooks'
+// import { useDarkModeManager } from '../../state/user/hooks'
 import { useETHBalances } from '../../state/wallet/hooks'
 
 import { YellowCard } from '../Card'
 import Settings from '../Settings'
 // import Menu from '../Menu'
 
-import Row, { RowBetween } from '../Row'
+import { RowBetween } from '../Row'
 import Web3Status from '../Web3Status'
 // import VersionSwitch from './VersionSwitch'
 
@@ -61,13 +61,13 @@ const Title = styled.a`
   }
 `
 
-const TitleText = styled(Row)`
-  width: fit-content;
-  white-space: nowrap;
-  ${({ theme }) => theme.mediaWidth.upToExtraSmall`
-    display: none;
-  `};
-`
+// const TitleText = styled(Row)`
+//   width: fit-content;
+//   white-space: nowrap;
+//   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
+//     display: none;
+//   `};
+// `
 
 const AccountElement = styled.div<{ active: boolean }>`
   display: flex;
@@ -140,7 +140,7 @@ export default function Header() {
   const { account, chainId } = useActiveWeb3React()
 
   const userEthBalance = useETHBalances(account ? [account] : [])?.[account ?? '']
-  const [isDark] = useDarkModeManager()
+  // const [isDark] = useDarkModeManager()
 
   return (
     <HeaderFrame>
@@ -148,11 +148,11 @@ export default function Header() {
         <HeaderElement>
           <Title href=".">
             <UniIcon>
-              <img src={isDark ? LogoDark : Logo} alt="logo" />
+              <img src={LogoDark} alt="logo" />
             </UniIcon>
-            <TitleText>
-              <img style={{ marginLeft: '4px', marginTop: '4px' }} src={isDark ? WordmarkDark : Wordmark} alt="logo" />
-            </TitleText>
+            {/*<TitleText>*/}
+            {/*  <img style={{ marginLeft: '4px', marginTop: '4px' }} src={isDark ? WordmarkDark : Wordmark} alt="logo" />*/}
+            {/*</TitleText>*/}
           </Title>
         </HeaderElement>
         <HeaderControls>
