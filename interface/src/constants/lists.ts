@@ -1,4 +1,4 @@
-// the Uniswap Default token list lives here
+// the MoonSwap Default token list lives here
 // export const DEFAULT_TOKEN_LIST_URL = 'https://app.moonswap.club/token.json'
 
 export const DEFAULT_TOKEN_LIST_URL =
