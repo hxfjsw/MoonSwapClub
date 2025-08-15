@@ -38,11 +38,11 @@ task(taskName, `Deploy ${taskSymbol}`)
 
         log.info(`operator ${operator.address}`);
 
-        // const CalHash = await hre.ethers.getContractFactory("CalHash");
-        // const mgr = await CalHash.deploy();
-        // await mgr.deployed(); //等的确认发布
-        // const hash = await mgr.getInitHash();
-        // console.log("hash",hash)
+        const CalHash = await hre.ethers.getContractFactory("CalHash");
+        const mgr = await CalHash.deploy();
+        await mgr.deployed(); //等的确认发布
+        const hash = await mgr.getInitHash();
+        console.log("hash", hash)
         // return;
 
         log.info(`deploy ${wethContract}`);
@@ -126,6 +126,23 @@ task(taskName, `Deploy ${taskSymbol}`)
         };
 
         await setDeployment(chainId, deployment);
+
+        const amount = "1000000000000000000000000000"
+        const TestToken = await hre.ethers.getContractFactory('DeflatingERC20');
+        const tt = await TestToken.deploy(amount);
+        await tt.deployed(); //等的确认发布
+        console.log('TestToken', tt.address)
+
+        const tx= await tt.approve(routerProxyAddress,amount)
+        const recp = await tx.wait();
+        console.log('recp', recp.status)
+
+        // console.log(deployRouterResult)
+        const addLiqTx = await Router.attach(routerProxyAddress).addLiquidityETH(tt.address,amount,"0","0",operator.address,"1755284777",{
+            value:"100000000"
+        })
+        const addLiqRec = await tx.wait();
+        console.log('addLiqRec', addLiqRec.status)
 
         ethersExecutionManager.printGas();
         ethersExecutionManager.deleteLock();

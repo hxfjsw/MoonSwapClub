@@ -30,6 +30,9 @@ npx hardhat compile
 ## 发布合约
 
 ```shell
+anvil --fork-url https://xlayerrpc.okx.com
+
+
 npx hardhat --network xlayer run MOON:deploy
 
 npx hardhat okverify --network xlayer 
@@ -44,7 +47,7 @@ npx hardhat flatten contracts/uniswap-v2-core/UniswapV2Factory.sol > flat/Uniswa
 npx hardhat flatten contracts/uniswap-v2-core/UniswapV2Pair.sol > flat/UniswapV2Pair.sol
 
 
-yarn run hardhat UniswapV2:deploy --gas-price 2 --wait-num 5 --network hardhat
+yarn run hardhat UniswapV2:deploy --gas-price 2 --wait-num 1 --network localhost
 
 
 ```

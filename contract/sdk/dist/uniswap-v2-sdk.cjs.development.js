@@ -46,28 +46,28 @@ var deploymentData = {
 },
 	"196": {
 	weth: {
-		proxyAddress: "0x64667E09548c9d418b9655912ae2B0e456b9108c",
-		implAddress: "0x64667E09548c9d418b9655912ae2B0e456b9108c",
+		proxyAddress: "0x5D4B5AAECf58b482D7C5450c0fe2103bF0c37542",
+		implAddress: "0x5D4B5AAECf58b482D7C5450c0fe2103bF0c37542",
 		version: "1.0.1",
 		contract: "WETH9",
 		operator: "0x689654553F70c434922d9d2B6180CeBb571c1127",
-		fromBlock: 30749796
+		fromBlock: 30753535
 	},
 	factory: {
-		proxyAddress: "0x1246Aa3131b97F6a563A92FA04903A7894E75Ae3",
-		implAddress: "0x1246Aa3131b97F6a563A92FA04903A7894E75Ae3",
+		proxyAddress: "0xB42B22fAa1d73c01d01ec33095a62657BD2749Ee",
+		implAddress: "0xB42B22fAa1d73c01d01ec33095a62657BD2749Ee",
 		version: "1.0.1",
 		contract: "UniswapV2Factory",
 		operator: "0x689654553F70c434922d9d2B6180CeBb571c1127",
-		fromBlock: 30749811
+		fromBlock: 30753539
 	},
 	router: {
-		proxyAddress: "0x647Fd170B7726B6F8A26064F6a8375975cF026F2",
-		implAddress: "0x647Fd170B7726B6F8A26064F6a8375975cF026F2",
+		proxyAddress: "0xbcBF3Cca0A1A2739E16c1850a8222760b420BAD7",
+		implAddress: "0xbcBF3Cca0A1A2739E16c1850a8222760b420BAD7",
 		version: "1.0.1",
 		contract: "UniswapV2Router02",
 		operator: "0x689654553F70c434922d9d2B6180CeBb571c1127",
-		fromBlock: 30749825
+		fromBlock: 30753543
 	}
 },
 	"31337": {
