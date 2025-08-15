@@ -60,10 +60,7 @@ export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
 
 export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } = {
   [ChainId.XLayer]: [
-    [
-      new Token(ChainId.XLayer, '0x661164ad622Cb439280a0F15C5a9936f2cA015da', 18, 'WETH9', 'WETH9'),
-      new Token(ChainId.XLayer, '0xcA845756FDb250c876b2B4C41197B77F5Dc00969', 18, 'MTK', 'MTK')
-    ]
+    [WETH[ChainId.XLayer], new Token(ChainId.XLayer, '0xcA845756FDb250c876b2B4C41197B77F5Dc00969', 18, 'MTK', 'MTK')]
   ]
 }
 

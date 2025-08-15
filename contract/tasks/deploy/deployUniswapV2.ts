@@ -38,11 +38,11 @@ task(taskName, `Deploy ${taskSymbol}`)
 
         log.info(`operator ${operator.address}`);
 
-        const CalHash = await hre.ethers.getContractFactory("CalHash");
-        const mgr = await CalHash.deploy();
-        await mgr.deployed(); //等的确认发布
-        const hash = await mgr.getInitHash();
-        console.log("hash",hash)
+        // const CalHash = await hre.ethers.getContractFactory("CalHash");
+        // const mgr = await CalHash.deploy();
+        // await mgr.deployed(); //等的确认发布
+        // const hash = await mgr.getInitHash();
+        // console.log("hash",hash)
         // return;
 
         log.info(`deploy ${wethContract}`);

@@ -26,7 +26,7 @@ export enum Rounding {
 
 export const FACTORY_ADDRESS = DeploymentInfo[ChainId.XLayer].factory.proxyAddress
 
-export const INIT_CODE_HASH = '0x2bbf561059bfad76dd3e7f5e7e45d68e76db16d20d00dc76889202628a6417d9'
+export const INIT_CODE_HASH = '0x89729c01b02d0a3d5a572a16b87ce52f10fa72b679a7d1b319e3ab51b3a208be'
 
 export const MINIMUM_LIQUIDITY = JSBI.BigInt(1000)
 
