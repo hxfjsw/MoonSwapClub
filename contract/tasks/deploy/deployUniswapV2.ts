@@ -198,11 +198,18 @@ task("MultiCall:deploy", `Deploy MultiCall`)
             const balance = await mgr.getEthBalance(operator.address);
             console.log('Operator ETH balance:', hre.ethers.utils.formatEther(balance), 'ETH');
             
-            // 5. 测试 aggregate 函数，但使用一个安全的调用
-            // 创建一个简单的测试调用，调用一个不存在的合约（会失败但不会崩溃）
+            // 5. 测试 aggregate 函数
+
+            const amount = "1000000000000000000000000000"
+            const TestToken = await hre.ethers.getContractFactory('DeflatingERC20');
+            const tt = await TestToken.deploy(amount);
+            await tt.deployed(); //等的确认发布
+            console.log('TestToken', tt.address)
+
+
             const safeCall = [
                 {
-                    target: "0x6088F6D6B6d64B9F42Ef06E1b34c6bF08C696d71", // 零地址
+                    target: tt.address, // 零地址
                     callData: "0x06fdde03" // 空的调用数据
                 }
             ];

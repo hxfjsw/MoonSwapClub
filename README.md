@@ -45,6 +45,7 @@ npx hardhat flatten contracts/uniswap-v2-periphery/test/WETH9.sol > flat/WETH9.s
 npx hardhat flatten contracts/uniswap-v2-periphery/UniswapV2Router02.sol > flat/UniswapV2Router02.sol
 npx hardhat flatten contracts/uniswap-v2-core/UniswapV2Factory.sol > flat/UniswapV2Factory.sol
 npx hardhat flatten contracts/uniswap-v2-core/UniswapV2Pair.sol > flat/UniswapV2Pair.sol
+npx hardhat flatten contracts/uniswap-v2-periphery/test/DeflatingERC20.sol > flat/DeflatingERC20.sol
 
 
 yarn run hardhat UniswapV2:deploy --gas-price 2 --wait-num 1 --network localhost
