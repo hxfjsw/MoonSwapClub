@@ -46,21 +46,17 @@ task(taskName, `Deploy ${taskSymbol}`)
         // return;
 
         log.info(`deploy ${wethContract}`);
-        const Weth = await hre.ethers.getContractFactory(wethContract);
-        const deployWethResult = await ethersExecutionManager.transaction(
-            Weth.deploy.bind(Weth),
-            [],
-            ['contractAddress', 'blockNumber'],
-            `deploy ${wethContract}`,
-            txConfig
-        );
-        const wethProxyAddress = deployWethResult.contractAddress;
-        const wethImplAddress = wethProxyAddress;
-        const wethFromBlock = deployWethResult.blockNumber;
-        const wethVersion = '1.0.1';
-        log.info(
-            `${wethContract} deployed proxy at ${wethProxyAddress},impl at ${wethImplAddress},version ${wethVersion},fromBlock ${wethFromBlock}`
-        );
+        // const Weth = await hre.ethers.getContractFactory(wethContract);
+        // const deployWethResult = await ethersExecutionManager.transaction(
+        //     Weth.deploy.bind(Weth),
+        //     [],
+        //     ['contractAddress', 'blockNumber'],
+        //     `deploy ${wethContract}`,
+        //     txConfig
+        // );
+        const wethProxyAddress = "0xe538905cf8410324e03a5a23c1c177a474d59b2b";//deployWethResult.contractAddress;
+        const wethImplAddress = "0xe538905cf8410324e03a5a23c1c177a474d59b2b";//wethProxyAddress;
+
 
         log.info(`deploy ${factoryContract}`);
         const Factory = await hre.ethers.getContractFactory(factoryContract);
@@ -74,9 +70,15 @@ task(taskName, `Deploy ${taskSymbol}`)
         const factoryProxyAddress = deployFactoryResult.contractAddress;
         const factoryImplAddress = factoryProxyAddress;
         const factoryFromBlock = deployFactoryResult.blockNumber;
-        const factoryVersion = '1.0.1';
+        const factoryVersion = '1.0.2';
         log.info(
             `${factoryContract} deployed proxy at ${factoryProxyAddress},impl at ${factoryImplAddress},version ${factoryVersion},fromBlock ${factoryFromBlock}`
+        );
+
+        const wethFromBlock = deployFactoryResult.blockNumber;
+        const wethVersion = '1.0.2';
+        log.info(
+            `${wethContract} deployed proxy at ${wethProxyAddress},impl at ${wethImplAddress},version ${wethVersion},fromBlock ${wethFromBlock}`
         );
 
         log.info(`deploy ${routerContract}`);
@@ -91,7 +93,7 @@ task(taskName, `Deploy ${taskSymbol}`)
         const routerProxyAddress = deployRouterResult.contractAddress;
         const routerImplAddress = routerProxyAddress;
         const routerFromBlock = deployRouterResult.blockNumber;
-        const routerVersion = '1.0.1';
+        const routerVersion = '1.0.2';
         log.info(
             `${routerContract} deployed proxy at ${routerProxyAddress},impl at ${routerImplAddress},version ${routerVersion},fromBlock ${routerFromBlock}`
         );
@@ -138,7 +140,7 @@ task(taskName, `Deploy ${taskSymbol}`)
         console.log('recp', recp.status)
 
         // console.log(deployRouterResult)
-        const addLiqTx = await Router.attach(routerProxyAddress).addLiquidityETH(tt.address,amount,"0","0",operator.address,"1755284777",{
+        const addLiqTx = await Router.attach(routerProxyAddress).addLiquidityETH(tt.address,amount,"0","0",operator.address,"1765284777",{
             value:"100000000"
         })
         const addLiqRec = await tx.wait();

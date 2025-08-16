@@ -46,28 +46,28 @@ var deploymentData = {
 },
 	"196": {
 	weth: {
-		proxyAddress: "0x5D4B5AAECf58b482D7C5450c0fe2103bF0c37542",
-		implAddress: "0x5D4B5AAECf58b482D7C5450c0fe2103bF0c37542",
-		version: "1.0.1",
+		proxyAddress: "0xe538905cf8410324e03a5a23c1c177a474d59b2b",
+		implAddress: "0xe538905cf8410324e03a5a23c1c177a474d59b2b",
+		version: "1.0.2",
 		contract: "WETH9",
 		operator: "0x689654553F70c434922d9d2B6180CeBb571c1127",
-		fromBlock: 30753535
+		fromBlock: 30879416
 	},
 	factory: {
-		proxyAddress: "0xB42B22fAa1d73c01d01ec33095a62657BD2749Ee",
-		implAddress: "0xB42B22fAa1d73c01d01ec33095a62657BD2749Ee",
-		version: "1.0.1",
+		proxyAddress: "0x1FB6c576Da55D069dDb465b0428A9b7D1e36442d",
+		implAddress: "0x1FB6c576Da55D069dDb465b0428A9b7D1e36442d",
+		version: "1.0.2",
 		contract: "UniswapV2Factory",
 		operator: "0x689654553F70c434922d9d2B6180CeBb571c1127",
-		fromBlock: 30753539
+		fromBlock: 30879416
 	},
 	router: {
-		proxyAddress: "0xbcBF3Cca0A1A2739E16c1850a8222760b420BAD7",
-		implAddress: "0xbcBF3Cca0A1A2739E16c1850a8222760b420BAD7",
-		version: "1.0.1",
+		proxyAddress: "0x2120625409De8f3a9eb5BC103A5f5db286dfE4d5",
+		implAddress: "0x2120625409De8f3a9eb5BC103A5f5db286dfE4d5",
+		version: "1.0.2",
 		contract: "UniswapV2Router02",
 		operator: "0x689654553F70c434922d9d2B6180CeBb571c1127",
-		fromBlock: 30753543
+		fromBlock: 30879434
 	}
 },
 	"31337": {
@@ -1460,7 +1460,7 @@ function toHex(currencyAmount) {
 
 var ZERO_HEX = '0x0';
 /**
- * Represents the Uniswap V2 Router, and has static methods for helping execute trades.
+ * Represents the MoonSwap V2 Router, and has static methods for helping execute trades.
  */
 
 var Router = /*#__PURE__*/function () {

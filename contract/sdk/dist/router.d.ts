@@ -30,11 +30,11 @@ export interface TradeOptionsDeadline extends Omit<TradeOptions, 'ttl'> {
     deadline: number;
 }
 /**
- * The parameters to use in the call to the Uniswap V2 Router to execute a trade.
+ * The parameters to use in the call to the MoonSwap V2 Router to execute a trade.
  */
 export interface SwapParameters {
     /**
-     * The method to call on the Uniswap V2 Router.
+     * The method to call on the MoonSwap V2 Router.
      */
     methodName: string;
     /**
@@ -47,7 +47,7 @@ export interface SwapParameters {
     value: string;
 }
 /**
- * Represents the Uniswap V2 Router, and has static methods for helping execute trades.
+ * Represents the MoonSwap V2 Router, and has static methods for helping execute trades.
  */
 export declare abstract class Router {
     /**
